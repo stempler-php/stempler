@@ -1,118 +1,119 @@
-# Stempler templating
+# Stempler
 
-The Stempler engine provides a powerful and flexible template engine with an ability to customize it on the lexer,
-parser, and AST compilation levels. By default, the driver is enabled with the web build of spiral skeleton application
-and provides support for Blade-like directives and echoing, HTML components, stacks, and more.
+Stempler is a standalone PHP template engine and HTML markup processor with support for Blade-like directives,
+context-aware escaping, inheritance, stacks, component imports, and AST visitors.
 
-## Basics usage
+## Installation
 
-In this section, we will walk you through the steps of creating and rendering a basic view using Stempler.
+```bash
+composer require spiral/stempler
+```
 
-### Create a view
+Requirements:
 
-The first step is to create the view file. The view file should be saved in the `app/views` directory (or any other
-directory configured in the `ViewsBootloader`). The file extension for Stempler templates must be `.dark.php`.
+- PHP `>=8.1`
+- `ext-json`
 
-let's create a view file `welcome.dark.php` with the following content:
+## Quick Start
 
-```php app/views/welcome.dark.php
+### Render a file-based template
+
+Create `views/hello.dark.php`:
+
+```php
 Hello, {{ $name }}!
 ```
 
-And store it in the `app/views` directory.
+Render it with `DirectoryLoader`:
 
-### Render the view
+```php
+use Spiral\Stempler\Loader\DirectoryLoader;
+use Spiral\Stempler\Stempler;
 
-Now we can render the view from the controller.
+$stempler = Stempler::create(
+    new DirectoryLoader(__DIR__ . '/views'),
+);
 
-:::: tabs
-
-::: tab Prototyped
-In our example, we will use the `PrototypeTrait` to simplify getting the `ViewsInterface` instance from the container.
-
-> **See more**
-> Read more about prototype trait in the [The Basics — Prototyping](../basics/prototype.md) section.
-
-```php app/src/Endpoint/Web/HomeController.php
-namespace App\Endpoint\Web;
-
-use Spiral\Prototype\Traits\PrototypeTrait;
-
-class HomeController
-{
-    use PrototypeTrait;
-
-    public function index(): string
-    {
-        return $this->views->render('welcome', [
-            'name' => 'John',
-        ]);
-    }
-}
+echo $stempler->render('hello', [
+    'name' => '<John>',
+]);
 ```
 
-:::
+Output:
 
-::: tab ViewInterface
-You can also access the `Spiral\Views\ViewsInterface` instance directly from the container.
-
-```php app/src/Endpoint/Web/HomeController.php
-namespace App\Endpoint\Web;
-
-use Spiral\Views\ViewsInterface;
-
-class HomeController
-{
-    public function __construct(
-        private readonly ViewsInterface $views
-    ) {
-    }
-
-    public function index(): string
-    {
-        return $this->views->render('welcome', [
-            'name' => 'John',
-        ]);
-    }
-}
+```text
+Hello, &lt;John&gt;!
 ```
 
-:::
+`DirectoryLoader` resolves `hello` to `views/hello.dark.php` by default.
 
-::::
+### Enable filesystem cache
 
-You should see `Hello, John!` on your screen.
+```php
+use Spiral\Stempler\Loader\DirectoryLoader;
+use Spiral\Stempler\Stempler;
+use Spiral\Stempler\StemplerCache;
 
-Stempler templates also support PHP underlying syntax:
+$stempler = Stempler::create(
+    new DirectoryLoader(__DIR__ . '/views'),
+    cache: new StemplerCache(__DIR__ . '/runtime/stempler'),
+);
+```
 
-```php app/views/welcome.dark.php
+Cache is used only for filesystem-backed templates. Drop a single cached template with:
+
+```php
+$stempler->reset('hello');
+```
+
+### Render an in-memory template
+
+```php
+use Spiral\Stempler\Loader\StringLoader;
+use Spiral\Stempler\Stempler;
+
+$loader = new StringLoader();
+$loader->set('hello', 'Hello, {{ $name }}!');
+
+echo Stempler::create($loader)->render('hello', [
+    'name' => 'Jane',
+]);
+```
+
+## Core API
+
+- `Stempler::create(LoaderInterface $loader, iterable $directives = [], array $visitors = [], ?StemplerCache $cache = null): Stempler`
+- `render(string $path, array $data = []): string`
+- `compile(string $path): Result`
+- `load(string $path): Template`
+- `makeSourceMap(Result|string $source): ?SourceMap`
+- `reset(string $path): void`
+
+Stempler templates also support raw PHP syntax:
+
+```php
 Hello, <?= $name ?>!
 ```
 
 > **Danger**
-> It's important to note that the syntax `{{ $name }}` provides automatic escaping, which helps to prevent
-> security issues such as [XSS attacks](https://owasp.org/www-community/attacks/xss/). On the other hand, the
-> traditional PHP syntax `<?= $name ?>` does not provide automatic escaping. If you choose to use the traditional PHP
-> syntax, it is recommended to manually escape the variables to ensure the security of your application.
+> `{{ $name }}` applies automatic escaping and is the safe default. `<?= $name ?>` does not escape output, so values
+> must be escaped manually when needed.
 
 #### Context-Aware escaping
 
-The escape strategy will change depending on where you echo your value. You can echo/embed your values inside `script`
-tags:
+The escape strategy changes depending on where you echo your value. You can safely embed values inside `script` tags:
 
-```php app/views/welcome.dark.php
+```php
 <script>
     const value = {{ $name }};
 </script>
 ```
 
-It will be rendered differently depending on the type of the value:
+It will be rendered differently depending on the value type:
 
 :::: tabs
 
 ::: tab String
-
-In case of a string value `['name' => 'John']`, the value will be automatically quoted:
 
 ```html
 <script>
@@ -124,8 +125,6 @@ In case of a string value `['name' => 'John']`, the value will be automatically 
 
 ::: tab Number
 
-In case of a number value `['name' => 123]`:
-
 ```html
 <script>
     const value = 123;
@@ -135,8 +134,6 @@ In case of a number value `['name' => 123]`:
 :::
 
 ::: tab Null
-
-In case of null value `['name' => null]`:
 
 ```html
 <script>
@@ -148,8 +145,6 @@ In case of null value `['name' => null]`:
 
 ::: tab List
 
-In case of an array `['name' => ['John']]` value:
-
 ```html
 <script>
     const value = ["John"];
@@ -159,8 +154,6 @@ In case of an array `['name' => ['John']]` value:
 :::
 
 ::: tab Array
-
-In case of an associative array `['name' => ['first' => 'John', 'last' => 'Doe']]` value:
 
 ```html
 <script>
@@ -174,56 +167,41 @@ In case of an associative array `['name' => ['first' => 'John', 'last' => 'Doe']
 
 #### Disable Escaping
 
-To output a value without any automatic escaping, you can use the alternative syntax.
+To output a value without automatic escaping, use:
 
 ```php
 {!! $value !!}
 ```
 
-This can be useful when you want to output HTML content or other types of content that should not be escaped.
+Example:
 
-Here is an example:
+```php
+$stempler = Stempler::create(
+    new DirectoryLoader(__DIR__ . '/views'),
+);
 
-```php app/src/Endpoint/Web/HomeController.php
-public function index(): string
-{
-    return $this->views->render('welcome', [
-        'html' => '<div>Hello world</div>'
-    ]);
-}
+echo $stempler->render('welcome', [
+    'html' => '<div>Hello world</div>',
+]);
 ```
 
-View file:
+Template:
 
-```php app/views/welcome.dark.php
+```php
 {!! $html !!}
 ```
 
-And an output:
-
-:::: tabs
-
-::: tab Unescaped
-With disabled escaping HTML content will be outputted as is, without any automatic escaping.
+Output with disabled escaping:
 
 ```html
 <div>Hello world</div>
 ```
 
-:::
-
-::: tab Escaped
-On the other hand, if you use the syntax `{{ $html }}` with automatic escaping enabled, the HTML tags will be escaped.
+Output with `{{ $html }}`:
 
 ```html
-&lt;div&gt;Hello world&lt;/div&gt;gt;
+&lt;div&gt;Hello world&lt;/div&gt;
 ```
-
-:::
-
-::::
-
-<hr>
 
 ## Directives
 
@@ -494,53 +472,17 @@ The generated view will then look like this:
 </script>
 ```
 
-### Framework specific directives
+### Built-in directives
 
-Spiral provides a number of framework-specific directives to be used in templates, including:
+The standalone core includes these directive groups by default:
 
-#### Container
+- conditional directives such as `@if`, `@elseif`, `@else`, `@unless`, `@isset`, `@empty`, and `@switch`
+- loop directives such as `@foreach`, `@for`, `@while`, `@break`, and `@continue`
+- `@json(...)`
+- raw PHP via `@php ... @endphp`
 
-To invoke a container dependency into a template, use the `@inject($variable, "class")` directive:
-
-```php
-@inject($app, App\App::class)
-{{ get_class($app) }}
-```
-
-#### Route
-
-To create a route, use the directive `@route`:
-
-```php
-<a href="@route('home:index')">click me</a>
-```
-
-You can use the `controller:action` pattern for targets handled by a `default route` or route name:
-
-```php
-$router->addRoute(
-    'html',
-    new Route('/<action>.html', new Controller(HomeController::class))
-);
-```
-
-Pass arguments using the second parameter:
-
-```php
-<a href="@route('html', ['action' => 'index'])">click me</a>
-```
-
-The parameters will be automatically slugified into the route url. Those parameters that are not found in the route
-pattern will be passed as query parameters:
-
-```php
-<a href="@route('html', ['action' => 'index', 'id' => 10])">click me</a>
-```
-
-The result `/index.html?id=10`.
-
-> **See more**
-> Read more about routing and named routes in the [HTTP — Routing](../http/routing.md) section.
+Framework-specific helpers such as routing or container access are intentionally out of scope for this package. Add
+them as custom directives in your application or use a framework integration package.
 
 ### Raw PHP
 
@@ -594,22 +536,17 @@ final class DatetimeDirective extends AbstractDirective
 
 #### Register the directive
 
-Register the custom directive using the `StemplerBootloader::addDirective()` method in a bootloader class.
+Pass the custom directive to `Stempler::create()`. You can pass either a class name or an instance.
 
-```php app/src/Application/Bootloader/CustomDirectiveBootloader.php
-namespace App\Application\Bootloader;
-
+```php
 use App\Integration\Stempler\DatetimeDirective;
-use Spiral\Boot\Bootloader\Bootloader;
-use Spiral\Stempler\Bootloader\StemplerBootloader;
+use Spiral\Stempler\Loader\DirectoryLoader;
+use Spiral\Stempler\Stempler;
 
-final class CustomDirectiveBootloader extends Bootloader
-{
-    public function boot(StemplerBootloader $stempler): void
-    {
-        $stempler->addDirective(DatetimeDirective::class);
-    }
-}
+$stempler = Stempler::create(
+    new DirectoryLoader(__DIR__ . '/views'),
+    directives: [DatetimeDirective::class],
+);
 ```
 
 #### Use the directive
@@ -2173,156 +2110,111 @@ class AltImageVisitor implements VisitorInterface
 
 ### Register Visitor
 
-Call `StemplerBootloader`->`addVistitor` to register visitors in the template engine. We can do it with the application
-bootloader:
+Pass visitors to `Stempler::create()` and group them by `Builder` stage:
 
-```php app/src/Application/Bootloader/AltImageBootloader.php
-namespace App\Application\Bootloader;
-
+```php
 use App\Visitor\AltImageVisitor;
-use Spiral\Boot\Bootloader\Bootloader;
-use Spiral\Stempler\Bootloader\StemplerBootloader;
+use Spiral\Stempler\Builder;
+use Spiral\Stempler\Loader\DirectoryLoader;
+use Spiral\Stempler\Stempler;
 
-class AltImageBootloader extends Bootloader
-{
-    public function boot(StemplerBootloader $stempler)
-    {
-        $stempler->addVisitor(AltImageVisitor::class);
-    }
-}
+$stempler = Stempler::create(
+    new DirectoryLoader(__DIR__ . '/views'),
+    visitors: [
+        Builder::STAGE_PREPARE => [AltImageVisitor::class],
+    ],
+);
 ```
 
 > **Note**
-> You have to clean view cache to view newly applied changes.
+> If you use `StemplerCache`, call `reset()` or clear the cache directory after changing visitors that affect the
+> rendered output.
 
 Now all the `img` tags will always include the `alt` attribute.
 
-### Standalone Usage
+### Low-level Usage
 
-You can use Stempler to process any HTML content.
+For most applications, `Stempler::create()` is the right entry point. If you need lower-level control over parsing,
+AST traversal, or compilation, you can work with the building blocks directly.
 
 ```php
-use Spiral\Stempler;
+use Spiral\Stempler\Compiler;
+use Spiral\Stempler\Compiler\Renderer\CoreRenderer;
+use Spiral\Stempler\Compiler\Renderer\HTMLRenderer;
+use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
+use Spiral\Stempler\Lexer\StringStream;
+use Spiral\Stempler\Parser;
+use Spiral\Stempler\Parser\Syntax\HTMLSyntax;
+use Spiral\Stempler\Traverser;
 
-$parser = new Stempler\Parser();
+$parser = new Parser();
 $parser->addSyntax(
-    new Stempler\Lexer\Grammar\HTMLGrammar(), 
-    new Stempler\Parser\Syntax\HTMLSyntax()
+    new HTMLGrammar(),
+    new HTMLSyntax()
 );
 
-$template = $parser->parse(new Stempler\Lexer\StringStream("<BODY>content</BODY>"));
+$template = $parser->parse(new StringStream('<BODY>content</BODY>'));
 
-$traverser = new Stempler\Traverser();
+$traverser = new Traverser();
 $traverser->addVisitor(new CustomVisitor());
 
 $template->nodes = $traverser->traverse($template->nodes);
 
-$compiler = new Stempler\Compiler();
-$compiler->addRenderer(new Stempler\Compiler\Renderer\CoreRenderer());
-$compiler->addRenderer(new Stempler\Compiler\Renderer\HTMLRenderer());
+$compiler = new Compiler();
+$compiler->addRenderer(new CoreRenderer());
+$compiler->addRenderer(new HTMLRenderer());
 
 dump($compiler->compile($template)->getContent());
 ```
 
-## Installation and Configuration
+## Configuration
 
-To install the extensions in alternative bundles:
+Use `Stempler::create()` to customize directives, visitors, and filesystem cache:
 
-```terminal
-composer require spiral/stempler-bridge
-```
-
-The `Spiral\Stempler\Bootloader\StemplerBootloader` bootloader must be added to the application kernel to enable its
-usage.
-
-:::: tabs
-
-::: tab Using method
-
-```php app/src/Application/Kernel.php
-public function defineBootloaders(): array
-{
-    return [
-        // ...
-        \Spiral\Stempler\Bootloader\StemplerBootloader::class,
-        // ...
-    ];
-}
-```
-
-Read more about bootloaders in the [Framework — Bootloaders](../framework/bootloaders.md) section.
-:::
-
-::: tab Using constant
-
-```php app/src/Application/Kernel.php
-protected const LOAD = [
-    // ...
-    \Spiral\Stempler\Bootloader\StemplerBootloader::class,
-    // ...
-];
-```
-
-Read more about bootloaders in the [Framework — Bootloaders](../framework/bootloaders.md) section.
-:::
-
-::::
-
-The Stempler bridge comes pre-configured. To replace and alter the default configuration, create a
-file `app/config/views/stempler.php`.
-
-<details>
-    <summary>Click to show configuration file content</summary>
-
-```php app/config/views/stempler.php
+```php
+use App\Directive\DatetimeDirective;
+use App\Visitor\CustomVisitor;
 use Spiral\Stempler\Builder;
-use Spiral\Stempler\Directive;
-use Spiral\Stempler\Transform\Finalizer;
-use Spiral\Stempler\Transform\Visitor;
-use Spiral\Views\Processor;
+use Spiral\Stempler\Loader\DirectoryLoader;
+use Spiral\Stempler\Stempler;
+use Spiral\Stempler\StemplerCache;
 
-return [
-    'directives' => [
-        // available Blade-style directives
-        Directive\PHPDirective::class,
-        Directive\RouteDirective::class,
-        Directive\LoopDirective::class,
-        Directive\JsonDirective::class,
-        Directive\ConditionalDirective::class,
-        Directive\ContainerDirective::class
+$stempler = Stempler::create(
+    new DirectoryLoader(__DIR__ . '/views'),
+    directives: [DatetimeDirective::class],
+    visitors: [
+        Builder::STAGE_COMPILE => [new CustomVisitor()],
     ],
-    'processors' => [
-        // cache depended source processors (i.e. LocaleProcessor)
-        Processor\ContextProcessor::class
-    ],
-    'visitors'   => [
-        Builder::STAGE_PREPARE   => [
-            // visitors to be invoked before transformations
-            Visitor\DefineBlocks::class,
-            Visitor\DefineAttributes::class,
-            Visitor\DefineHidden::class
-        ],
-        Builder::STAGE_TRANSFORM => [
-            // visitors to be invoked during transformations
-        ],
-        Builder::STAGE_FINALIZE  => [
-            // visitors to be invoked on after the transformations is over
-            Visitor\DefineStacks::class,
-            Finalizer\StackCollector::class,
-        ],
-        Builder::STAGE_COMPILE   => [
-            // visitors to be invoked on compilation stage
-        ]
-    ]
-];
+    cache: new StemplerCache(__DIR__ . '/runtime/stempler'),
+);
 ```
 
-</details>
+By default, the standalone core already registers:
 
-> **Note**
-> Prefer to use the `Spiral\Stempler\Bootloader\StemplerBootloader` bootloader to configure the engine.
+- `PHPDirective`, `LoopDirective`, `JsonDirective`, and `ConditionalDirective`
+- prepare-stage visitors: `DefineBlocks`, `DefineAttributes`, `DefineHidden`
+- finalize-stage visitors: `DefineStacks`, `StackCollector`
 
 ## Pretty Printing
 
-The bridge comes with an additional bootloader called `Spiral\Stempler\Bootloader\PrettyPrintBootloader`, which is
-responsible for pretty printing the HTML content of your templates.
+Pretty printing is available from the core visitors. Register `FlattenNodes` and `FormatHTML` at the compile stage:
+
+```php
+use Spiral\Stempler\Builder;
+use Spiral\Stempler\Loader\StringLoader;
+use Spiral\Stempler\Stempler;
+use Spiral\Stempler\Transform\Visitor\FlattenNodes;
+use Spiral\Stempler\Transform\Visitor\FormatHTML;
+
+$loader = new StringLoader();
+$loader->set('root', "<div>\n    <block:name>\n        hello\n    </block:name>\n</div>");
+
+$stempler = Stempler::create($loader, visitors: [
+    Builder::STAGE_COMPILE => [
+        new FlattenNodes(),
+        new FormatHTML(),
+    ],
+]);
+
+echo $stempler->render('root');
+```
