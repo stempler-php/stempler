@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Spiral\Stempler\Transform\Context;
 
-use Spiral\Core\Exception\LogicException;
 use Spiral\Stempler\Builder;
 use Spiral\Stempler\Node\AttributedInterface;
 use Spiral\Stempler\Node\Template;
@@ -29,7 +28,7 @@ final class ImportContext
     {
         $node = $this->ctx->getParentNode();
         if (!$node instanceof AttributedInterface) {
-            throw new LogicException(\sprintf(
+            throw new \LogicException(\sprintf(
                 'Unable to create import on node without attribute storage (%s)',
                 \get_debug_type($node),
             ));

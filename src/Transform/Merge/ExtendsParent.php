@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Spiral\Stempler\Transform\Merge;
 
-use Spiral\Core\Exception\LogicException;
 use Spiral\Stempler\Builder;
 use Spiral\Stempler\Exception\ExtendsException;
 use Spiral\Stempler\Exception\SyntaxException;
@@ -44,7 +43,7 @@ final class ExtendsParent implements VisitorInterface
         if ($node instanceof Tag && \str_starts_with($node->name, $this->extendsKeyword)) {
             $parent = $ctx->getParentNode();
             if (!$parent instanceof AttributedInterface) {
-                throw new LogicException(\sprintf(
+                throw new \LogicException(\sprintf(
                     'Unable to extend non attributable node (%s)',
                     \get_debug_type($node),
                 ));
