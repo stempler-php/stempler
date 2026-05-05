@@ -37,10 +37,13 @@ final class StackContext
                 continue;
             }
 
-            if ($uniqueID !== null && isset($stack->uniqueIDs[$uniqueID])) {
-                return true;
+            if ($uniqueID !== null) {
+                if (isset($stack->uniqueIDs[$uniqueID])) {
+                    return true;
+                }
+
+                $stack->uniqueIDs[$uniqueID] = true;
             }
-            $stack->uniqueIDs[$uniqueID] = true;
 
             /**
              * TODO issue #767
@@ -64,10 +67,13 @@ final class StackContext
                 continue;
             }
 
-            if ($uniqueID !== null && isset($stack->uniqueIDs[$uniqueID])) {
-                return true;
+            if ($uniqueID !== null) {
+                if (isset($stack->uniqueIDs[$uniqueID])) {
+                    return true;
+                }
+
+                $stack->uniqueIDs[$uniqueID] = true;
             }
-            $stack->uniqueIDs[$uniqueID] = true;
             /**
              * TODO issue #767
              * @link https://github.com/spiral/framework/issues/767
