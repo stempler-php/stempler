@@ -3,6 +3,8 @@
 Stempler is a standalone PHP template engine and HTML markup processor with support for Blade-like directives,
 context-aware escaping, inheritance, stacks, component imports, and AST visitors.
 
+This project is a standalone fork of `spiral/stempler` without coupling to the Spiral Framework.
+
 ## Installation
 
 ```bash
