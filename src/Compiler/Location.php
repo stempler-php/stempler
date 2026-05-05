@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Compiler;
+namespace Stempler\Compiler;
 
-use Spiral\Stempler\Parser\Context;
+use Stempler\Parser\Context;
 
 /**
  * Describes the location of a source line in relation to external path.

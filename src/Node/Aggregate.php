@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node;
+namespace Stempler\Node;
 
-use Spiral\Stempler\Node\Traits\ContextTrait;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Node\Traits\ContextTrait;
+use Stempler\Parser\Context;
 
 /**
  * Aggregated multiple nodes together using public pattern.

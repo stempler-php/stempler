@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform;
+namespace Stempler\Transform;
 
-use Spiral\Stempler\Node\HTML\Nil;
-use Spiral\Stempler\Node\Mixin;
-use Spiral\Stempler\Node\NodeInterface;
-use Spiral\Stempler\Node\Raw;
+use Stempler\Node\HTML\Nil;
+use Stempler\Node\Mixin;
+use Stempler\Node\NodeInterface;
+use Stempler\Node\Raw;
 
 /**
  * Carries value defined inside via attribute.

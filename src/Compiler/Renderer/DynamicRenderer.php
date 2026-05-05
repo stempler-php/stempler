@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Compiler\Renderer;
+namespace Stempler\Compiler\Renderer;
 
-use Spiral\Stempler\Compiler;
-use Spiral\Stempler\Directive\DirectiveRendererInterface;
-use Spiral\Stempler\Exception\DirectiveException;
-use Spiral\Stempler\Node\Dynamic\Directive;
-use Spiral\Stempler\Node\Dynamic\Output;
-use Spiral\Stempler\Node\NodeInterface;
+use Stempler\Compiler;
+use Stempler\Directive\DirectiveRendererInterface;
+use Stempler\Exception\DirectiveException;
+use Stempler\Node\Dynamic\Directive;
+use Stempler\Node\Dynamic\Output;
+use Stempler\Node\NodeInterface;
 
 final class DynamicRenderer implements Compiler\RendererInterface
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Compiler;
+namespace Stempler\Tests\Compiler;
 
-use Spiral\Stempler\Compiler\Renderer\CoreRenderer;
-use Spiral\Stempler\Compiler\Renderer\HTMLRenderer;
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Parser\Syntax\HTMLSyntax;
+use Stempler\Compiler\Renderer\CoreRenderer;
+use Stempler\Compiler\Renderer\HTMLRenderer;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Parser\Syntax\HTMLSyntax;
 
 class HTMLTest extends BaseTestCase
 {

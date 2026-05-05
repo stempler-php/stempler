@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Finalizer;
+namespace Stempler\Transform\Finalizer;
 
-use Spiral\Stempler\Compiler\Renderer\DynamicRenderer;
-use Spiral\Stempler\Directive\DirectiveRendererInterface;
-use Spiral\Stempler\Exception\DirectiveException;
-use Spiral\Stempler\Node\Dynamic\Directive;
-use Spiral\Stempler\Node\Dynamic\Output;
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\HTML\Verbatim;
-use Spiral\Stempler\Node\PHP;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Transform\Merge\ExtendsParent;
-use Spiral\Stempler\Traverser;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Compiler\Renderer\DynamicRenderer;
+use Stempler\Directive\DirectiveRendererInterface;
+use Stempler\Exception\DirectiveException;
+use Stempler\Node\Dynamic\Directive;
+use Stempler\Node\Dynamic\Output;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\HTML\Verbatim;
+use Stempler\Node\PHP;
+use Stempler\Node\Template;
+use Stempler\Transform\Merge\ExtendsParent;
+use Stempler\Traverser;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Compile all directives and output blocks into PHP equivalent with context aware escaping (when needed).

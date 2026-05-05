@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Grammar;
+namespace Stempler\Tests\Grammar;
 
 use PHPUnit\Framework\TestCase;
-use Spiral\Stempler\Lexer\Lexer;
-use Spiral\Stempler\Lexer\StringStream;
+use Stempler\Lexer\Lexer;
+use Stempler\Lexer\StringStream;
 
 abstract class BaseTestCase extends TestCase
 {

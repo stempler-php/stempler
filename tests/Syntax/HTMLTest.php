@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Syntax;
+namespace Stempler\Tests\Syntax;
 
-use Spiral\Stempler\Exception\ParserException;
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\HTML\Verbatim;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Parser\Syntax\HTMLSyntax;
+use Stempler\Exception\ParserException;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\HTML\Verbatim;
+use Stempler\Node\Raw;
+use Stempler\Parser\Syntax\HTMLSyntax;
 
 class HTMLTest extends BaseTestCase
 {

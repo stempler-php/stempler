@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node\HTML;
+namespace Stempler\Node\HTML;
 
-use Spiral\Stempler\Node\AttributedInterface;
-use Spiral\Stempler\Node\Mixin;
-use Spiral\Stempler\Node\NodeInterface;
-use Spiral\Stempler\Node\Traits\AttributeTrait;
-use Spiral\Stempler\Node\Traits\ContextTrait;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Node\AttributedInterface;
+use Stempler\Node\Mixin;
+use Stempler\Node\NodeInterface;
+use Stempler\Node\Traits\AttributeTrait;
+use Stempler\Node\Traits\ContextTrait;
+use Stempler\Parser\Context;
 
 /**
  * Tag or other control block.

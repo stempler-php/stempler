@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Finalizer;
+namespace Stempler\Transform\Finalizer;
 
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Transform\Context\StackContext;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\HTML\Tag;
+use Stempler\Transform\Context\StackContext;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * StackCollection mounts all values pushed to stacks into stack placeholders. You can define stack pushes in any

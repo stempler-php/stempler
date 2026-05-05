@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Parser\Syntax;
+namespace Stempler\Parser\Syntax;
 
-use Spiral\Stempler\Lexer\Grammar\InlineGrammar;
-use Spiral\Stempler\Lexer\Token;
-use Spiral\Stempler\Node\Inline;
-use Spiral\Stempler\Parser;
-use Spiral\Stempler\Parser\Assembler;
-use Spiral\Stempler\Parser\SyntaxInterface;
+use Stempler\Lexer\Grammar\InlineGrammar;
+use Stempler\Lexer\Token;
+use Stempler\Node\Inline;
+use Stempler\Parser;
+use Stempler\Parser\Assembler;
+use Stempler\Parser\SyntaxInterface;
 
 final class InlineSyntax implements SyntaxInterface
 {

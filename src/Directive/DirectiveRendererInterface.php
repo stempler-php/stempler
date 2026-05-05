@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Directive;
+namespace Stempler\Directive;
 
-use Spiral\Stempler\Node\Dynamic\Directive;
+use Stempler\Node\Dynamic\Directive;
 
 /**
  * Compiles one or multiple directives.

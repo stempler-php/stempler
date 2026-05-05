@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler;
+namespace Stempler;
 
-use Spiral\Stempler\Exception\ParserException;
-use Spiral\Stempler\Exception\SyntaxException;
-use Spiral\Stempler\Lexer\Grammar\RawGrammar;
-use Spiral\Stempler\Lexer\GrammarInterface;
-use Spiral\Stempler\Lexer\Lexer;
-use Spiral\Stempler\Lexer\StreamInterface;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Parser\Assembler;
-use Spiral\Stempler\Parser\Context;
-use Spiral\Stempler\Parser\Syntax\RawSyntax;
-use Spiral\Stempler\Parser\SyntaxInterface;
+use Stempler\Exception\ParserException;
+use Stempler\Exception\SyntaxException;
+use Stempler\Lexer\Grammar\RawGrammar;
+use Stempler\Lexer\GrammarInterface;
+use Stempler\Lexer\Lexer;
+use Stempler\Lexer\StreamInterface;
+use Stempler\Node\Template;
+use Stempler\Parser\Assembler;
+use Stempler\Parser\Context;
+use Stempler\Parser\Syntax\RawSyntax;
+use Stempler\Parser\SyntaxInterface;
 
 /**
  * Module content parser with configurable grammars and syntaxes.

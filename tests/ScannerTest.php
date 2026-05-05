@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler;
+namespace Stempler\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Spiral\Stempler\Lexer\StringStream;
+use Stempler\Lexer\StringStream;
 
 class ScannerTest extends TestCase
 {

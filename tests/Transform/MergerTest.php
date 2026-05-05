@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
 use PHPUnit\Framework\TestCase;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Transform\Import\Bundle;
-use Spiral\Stempler\Transform\Merger;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\Template;
+use Stempler\Transform\Import\Bundle;
+use Stempler\Transform\Merger;
 
 final class MergerTest extends TestCase
 {

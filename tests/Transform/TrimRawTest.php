@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Transform\Finalizer\TrimRaw;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\Raw;
+use Stempler\Transform\Finalizer\TrimRaw;
 
 class TrimRawTest extends BaseTestCase
 {

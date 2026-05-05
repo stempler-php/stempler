@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Grammar;
+namespace Stempler\Tests\Grammar;
 
-use Spiral\Stempler\Lexer\Grammar\PHPGrammar;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Grammar\PHPGrammar;
+use Stempler\Lexer\Token;
 
 class PHPTest extends BaseTestCase
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node\HTML;
+namespace Stempler\Node\HTML;
 
-use Spiral\Stempler\Node\Mixin;
-use Spiral\Stempler\Node\NodeInterface;
-use Spiral\Stempler\Node\Traits\ContextTrait;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Node\Mixin;
+use Stempler\Node\NodeInterface;
+use Stempler\Node\Traits\ContextTrait;
+use Stempler\Parser\Context;
 
 /**
  * Represents single node/tag attribute and it's value.

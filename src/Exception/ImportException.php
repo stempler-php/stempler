@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Exception;
+namespace Stempler\Exception;
 
-use Spiral\Stempler\Exception\Traits\ContextTrait;
+use Stempler\Exception\Traits\ContextTrait;
 
 class ImportException extends \RuntimeException implements ContextExceptionInterface
 {

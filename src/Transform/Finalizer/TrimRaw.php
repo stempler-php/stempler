@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Finalizer;
+namespace Stempler\Transform\Finalizer;
 
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\Raw;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Visitor deletes all raw nodes which contain only whitespace characters..

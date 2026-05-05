@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Merge;
+namespace Stempler\Transform\Merge;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Exception\ImportException;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Transform\Context\ImportContext;
-use Spiral\Stempler\Transform\Import\Bundle;
-use Spiral\Stempler\Transform\Import\Directory;
-use Spiral\Stempler\Transform\Import\Element;
-use Spiral\Stempler\Transform\Import\ImportInterface;
-use Spiral\Stempler\Transform\Import\Inline;
-use Spiral\Stempler\Transform\Merger;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Builder;
+use Stempler\Exception\ImportException;
+use Stempler\Node\HTML\Tag;
+use Stempler\Transform\Context\ImportContext;
+use Stempler\Transform\Import\Bundle;
+use Stempler\Transform\Import\Directory;
+use Stempler\Transform\Import\Element;
+use Stempler\Transform\Import\ImportInterface;
+use Stempler\Transform\Import\Inline;
+use Stempler\Transform\Merger;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Resolves inline imports and use tags.

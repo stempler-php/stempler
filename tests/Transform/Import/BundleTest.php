@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform\Import;
+namespace Stempler\Tests\Transform\Import;
 
 use Mockery as m;
 use PHPUnit\Framework\Attributes\DataProvider;
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\Source;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Transform\Context\ImportContext;
-use Spiral\Stempler\Transform\Import\Bundle;
-use Spiral\Stempler\Transform\Import\ImportInterface;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
-use Spiral\Tests\Stempler\Transform\BaseTestCase;
+use Stempler\Builder;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\Source;
+use Stempler\Node\Template;
+use Stempler\Transform\Context\ImportContext;
+use Stempler\Transform\Import\Bundle;
+use Stempler\Transform\Import\ImportInterface;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
+use Stempler\Tests\Transform\BaseTestCase;
 
 final class BundleTest extends BaseTestCase
 {

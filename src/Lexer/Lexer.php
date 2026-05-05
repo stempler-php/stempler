@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Lexer;
+namespace Stempler\Lexer;
 
-use Spiral\Stempler\Lexer\Grammar\RawGrammar;
+use Stempler\Lexer\Grammar\RawGrammar;
 
 /**
  * Tokenize given byte stream into stream of tokens (like real stream, not "array"). Lexer support pluginable

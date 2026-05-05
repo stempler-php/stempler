@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Parser;
+namespace Stempler\Parser;
 
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Token;
 
 /**
  * Defines the node location in a source code.

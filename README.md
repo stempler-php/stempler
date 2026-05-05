@@ -6,7 +6,7 @@ context-aware escaping, inheritance, stacks, component imports, and AST visitors
 ## Installation
 
 ```bash
-composer require spiral/stempler
+composer require stempler/stempler
 ```
 
 Requirements:
@@ -27,8 +27,8 @@ Hello, {{ $name }}!
 Render it with `DirectoryLoader`:
 
 ```php
-use Spiral\Stempler\Loader\DirectoryLoader;
-use Spiral\Stempler\Stempler;
+use Stempler\Loader\DirectoryLoader;
+use Stempler\Stempler;
 
 $stempler = Stempler::create(
     new DirectoryLoader(__DIR__ . '/views'),
@@ -50,9 +50,9 @@ Hello, &lt;John&gt;!
 ### Enable filesystem cache
 
 ```php
-use Spiral\Stempler\Loader\DirectoryLoader;
-use Spiral\Stempler\Stempler;
-use Spiral\Stempler\StemplerCache;
+use Stempler\Loader\DirectoryLoader;
+use Stempler\Stempler;
+use Stempler\StemplerCache;
 
 $stempler = Stempler::create(
     new DirectoryLoader(__DIR__ . '/views'),
@@ -69,8 +69,8 @@ $stempler->reset('hello');
 ### Render an in-memory template
 
 ```php
-use Spiral\Stempler\Loader\StringLoader;
-use Spiral\Stempler\Stempler;
+use Stempler\Loader\StringLoader;
+use Stempler\Stempler;
 
 $loader = new StringLoader();
 $loader->set('hello', 'Hello, {{ $name }}!');
@@ -505,21 +505,21 @@ Just double 'at' letter like
 ### Custom Directives
 
 Stempler provides a way to extend its functionality through custom directives. A custom directive is a class that
-extends the `Spiral\Stempler\Directive\AbstractDirective` class and implements a render method that accepts
-a `Spiral\Stempler\Node\Dynamic\Directive` parameter.
+extends the `Stempler\Directive\AbstractDirective` class and implements a render method that accepts
+a `Stempler\Node\Dynamic\Directive` parameter.
 
 To create a custom directive, follow these steps:
 
 #### Create a directive class
 
-Create a class that extends `Spiral\Stempler\Directive\AbstractDirective` and implements the render method with the
+Create a class that extends `Stempler\Directive\AbstractDirective` and implements the render method with the
 desired functionality.
 
 ```php app/src/Integration/Stempler/DatetimeDirective.php
 namespace App\Integration\Stempler;
 
-use Spiral\Stempler\Directive\AbstractDirective;
-use Spiral\Stempler\Node\Dynamic\Directive;
+use Stempler\Directive\AbstractDirective;
+use Stempler\Node\Dynamic\Directive;
 
 final class DatetimeDirective extends AbstractDirective
 {
@@ -531,7 +531,7 @@ final class DatetimeDirective extends AbstractDirective
 ```
 
 > **Note**
-> It's also possible to implement the `Spiral\Stempler\Directive\DirectiveRendererInterface` for lower-level access to
+> It's also possible to implement the `Stempler\Directive\DirectiveRendererInterface` for lower-level access to
 > the rendering process.
 
 #### Register the directive
@@ -540,8 +540,8 @@ Pass the custom directive to `Stempler::create()`. You can pass either a class n
 
 ```php
 use App\Integration\Stempler\DatetimeDirective;
-use Spiral\Stempler\Loader\DirectoryLoader;
-use Spiral\Stempler\Stempler;
+use Stempler\Loader\DirectoryLoader;
+use Stempler\Stempler;
 
 $stempler = Stempler::create(
     new DirectoryLoader(__DIR__ . '/views'),
@@ -2073,12 +2073,12 @@ works [here](https://github.com/nikic/PHP-Parser/blob/master/doc/2_Usage_of_basi
 
 To create an AST visitor, you must implement the interface provided by the Stempler engine
 
-- `Spiral\Stempler\VisitorInterface`.
+- `Stempler\VisitorInterface`.
 
 We will try to create a visitor that automatically adds an `alt` attribute to all `img` tags found in your templates:
 
 ```php
-use Spiral\Stempler\Node\HTML;use Spiral\Stempler\VisitorContext;use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\HTML;use Stempler\VisitorContext;use Stempler\VisitorInterface;
 
 class AltImageVisitor implements VisitorInterface
 {
@@ -2114,9 +2114,9 @@ Pass visitors to `Stempler::create()` and group them by `Builder` stage:
 
 ```php
 use App\Visitor\AltImageVisitor;
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Loader\DirectoryLoader;
-use Spiral\Stempler\Stempler;
+use Stempler\Builder;
+use Stempler\Loader\DirectoryLoader;
+use Stempler\Stempler;
 
 $stempler = Stempler::create(
     new DirectoryLoader(__DIR__ . '/views'),
@@ -2138,14 +2138,14 @@ For most applications, `Stempler::create()` is the right entry point. If you nee
 AST traversal, or compilation, you can work with the building blocks directly.
 
 ```php
-use Spiral\Stempler\Compiler;
-use Spiral\Stempler\Compiler\Renderer\CoreRenderer;
-use Spiral\Stempler\Compiler\Renderer\HTMLRenderer;
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Lexer\StringStream;
-use Spiral\Stempler\Parser;
-use Spiral\Stempler\Parser\Syntax\HTMLSyntax;
-use Spiral\Stempler\Traverser;
+use Stempler\Compiler;
+use Stempler\Compiler\Renderer\CoreRenderer;
+use Stempler\Compiler\Renderer\HTMLRenderer;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Lexer\StringStream;
+use Stempler\Parser;
+use Stempler\Parser\Syntax\HTMLSyntax;
+use Stempler\Traverser;
 
 $parser = new Parser();
 $parser->addSyntax(
@@ -2174,10 +2174,10 @@ Use `Stempler::create()` to customize directives, visitors, and filesystem cache
 ```php
 use App\Directive\DatetimeDirective;
 use App\Visitor\CustomVisitor;
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Loader\DirectoryLoader;
-use Spiral\Stempler\Stempler;
-use Spiral\Stempler\StemplerCache;
+use Stempler\Builder;
+use Stempler\Loader\DirectoryLoader;
+use Stempler\Stempler;
+use Stempler\StemplerCache;
 
 $stempler = Stempler::create(
     new DirectoryLoader(__DIR__ . '/views'),
@@ -2200,11 +2200,11 @@ By default, the standalone core already registers:
 Pretty printing is available from the core visitors. Register `FlattenNodes` and `FormatHTML` at the compile stage:
 
 ```php
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Loader\StringLoader;
-use Spiral\Stempler\Stempler;
-use Spiral\Stempler\Transform\Visitor\FlattenNodes;
-use Spiral\Stempler\Transform\Visitor\FormatHTML;
+use Stempler\Builder;
+use Stempler\Loader\StringLoader;
+use Stempler\Stempler;
+use Stempler\Transform\Visitor\FlattenNodes;
+use Stempler\Transform\Visitor\FormatHTML;
 
 $loader = new StringLoader();
 $loader->set('root', "<div>\n    <block:name>\n        hello\n    </block:name>\n</div>");

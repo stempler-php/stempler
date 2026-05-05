@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node;
+namespace Stempler\Node;
 
-use Spiral\Stempler\Node\Traits\AttributeTrait;
-use Spiral\Stempler\Node\Traits\ContextTrait;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Node\Traits\AttributeTrait;
+use Stempler\Node\Traits\ContextTrait;
+use Stempler\Parser\Context;
 
 /**
  * Blocks used to extend and import templates. Block operate as template variable.

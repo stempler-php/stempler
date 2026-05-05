@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler;
+namespace Stempler;
 
-use Spiral\Stempler\Compiler\Result;
-use Spiral\Stempler\Exception\CompilerException;
-use Spiral\Stempler\Exception\ContextExceptionInterface;
-use Spiral\Stempler\Exception\LoaderException;
-use Spiral\Stempler\Exception\ParserException;
-use Spiral\Stempler\Lexer\StringStream;
-use Spiral\Stempler\Lexer\Token;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\Source;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Compiler\Result;
+use Stempler\Exception\CompilerException;
+use Stempler\Exception\ContextExceptionInterface;
+use Stempler\Exception\LoaderException;
+use Stempler\Exception\ParserException;
+use Stempler\Lexer\StringStream;
+use Stempler\Lexer\Token;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\Source;
+use Stempler\Node\Template;
+use Stempler\Parser\Context;
 
 /**
  * Builds and compiles templates using set given compiler. Template is passed thought the set of

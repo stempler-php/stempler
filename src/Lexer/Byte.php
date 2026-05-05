@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Lexer;
+namespace Stempler\Lexer;
 
 final class Byte
 {

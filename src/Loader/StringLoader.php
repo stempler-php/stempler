@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Loader;
+namespace Stempler\Loader;
 
-use Spiral\Stempler\Exception\LoaderException;
+use Stempler\Exception\LoaderException;
 
 final class StringLoader implements LoaderInterface
 {

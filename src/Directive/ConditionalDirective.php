@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Directive;
+namespace Stempler\Directive;
 
-use Spiral\Stempler\Node\Dynamic\Directive;
+use Stempler\Node\Dynamic\Directive;
 
 /**
  * @see https://github.com/laravel/framework/tree/6.x/src/Illuminate/View/Compilers/Concerns

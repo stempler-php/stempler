@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform;
+namespace Stempler\Transform;
 
 /**
  * Carries list of block definitions between template and import/parent. Provides the ability to

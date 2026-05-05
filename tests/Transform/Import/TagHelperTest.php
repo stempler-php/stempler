@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform\Import;
+namespace Stempler\Tests\Transform\Import;
 
-use Spiral\Stempler\Transform\Import\TagHelper;
-use Spiral\Tests\Stempler\Transform\BaseTestCase;
+use Stempler\Transform\Import\TagHelper;
+use Stempler\Tests\Transform\BaseTestCase;
 
 final class TagHelperTest extends BaseTestCase
 {

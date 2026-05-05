@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Finalizer;
+namespace Stempler\Transform\Finalizer;
 
-use Spiral\Stempler\Node\Block;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\Block;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Isolate blocks defined by specific path.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler;
+namespace Stempler;
 
 interface VisitorInterface
 {

@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Exception;
+namespace Stempler\Exception;
 
 class DirectiveException extends CompilerException {}

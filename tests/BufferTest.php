@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler;
+namespace Stempler\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Spiral\Stempler\Lexer\Buffer;
-use Spiral\Stempler\Lexer\Byte;
-use Spiral\Stempler\Lexer\StreamInterface;
-use Spiral\Stempler\Lexer\StringStream;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Buffer;
+use Stempler\Lexer\Byte;
+use Stempler\Lexer\StreamInterface;
+use Stempler\Lexer\StringStream;
+use Stempler\Lexer\Token;
 
 class BufferTest extends TestCase
 {

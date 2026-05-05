@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Lexer\Grammar;
+namespace Stempler\Lexer\Grammar;
 
-use Spiral\Stempler\Lexer\Buffer;
-use Spiral\Stempler\Lexer\Byte;
-use Spiral\Stempler\Lexer\GrammarInterface;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Buffer;
+use Stempler\Lexer\Byte;
+use Stempler\Lexer\GrammarInterface;
+use Stempler\Lexer\Token;
 
 final class PHPGrammar implements GrammarInterface
 {

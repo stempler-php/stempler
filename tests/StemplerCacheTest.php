@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler;
+namespace Stempler\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Spiral\Stempler\StemplerCache;
+use Stempler\StemplerCache;
 
 final class StemplerCacheTest extends TestCase
 {

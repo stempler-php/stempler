@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform;
+namespace Stempler\Transform;
 
 use DeepCopy\DeepCopy;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\NodeInterface;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Transform\Finalizer\IsolateBlocks;
-use Spiral\Stempler\Transform\Finalizer\IsolatePHPBlocks;
-use Spiral\Stempler\Transform\Merge\Inject;
-use Spiral\Stempler\Traverser;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\NodeInterface;
+use Stempler\Node\Template;
+use Stempler\Transform\Finalizer\IsolateBlocks;
+use Stempler\Transform\Finalizer\IsolatePHPBlocks;
+use Stempler\Transform\Merge\Inject;
+use Stempler\Traverser;
+use Stempler\VisitorInterface;
 
 /**
  * Merges two ASTs. Used by extend and import blocks. Called inside ResolveImports,

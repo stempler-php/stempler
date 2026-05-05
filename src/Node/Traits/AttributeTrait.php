@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node\Traits;
+namespace Stempler\Node\Traits;
 
 trait AttributeTrait
 {

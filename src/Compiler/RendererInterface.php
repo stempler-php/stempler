@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Compiler;
+namespace Stempler\Compiler;
 
-use Spiral\Stempler\Compiler;
-use Spiral\Stempler\Node\NodeInterface;
+use Stempler\Compiler;
+use Stempler\Node\NodeInterface;
 
 interface RendererInterface
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
-use Spiral\Stempler\Node\Block;
-use Spiral\Stempler\Transform\Visitor\DefineBlocks;
+use Stempler\Node\Block;
+use Stempler\Transform\Visitor\DefineBlocks;
 
 class BlocksTest extends BaseTestCase
 {

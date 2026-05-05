@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Directive;
+namespace Stempler\Directive;
 
-use Spiral\Stempler\Node\Dynamic\Directive;
+use Stempler\Node\Dynamic\Directive;
 
 final class DirectiveGroup implements DirectiveRendererInterface
 {
     /**
-     * @param \Spiral\Stempler\Directive\DirectiveRendererInterface[] $directives
+     * @param \Stempler\Directive\DirectiveRendererInterface[] $directives
      */
     public function __construct(
         private array $directives = [],

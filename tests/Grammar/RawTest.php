@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Grammar;
+namespace Stempler\Tests\Grammar;
 
-use Spiral\Stempler\Lexer\Lexer;
-use Spiral\Stempler\Lexer\StringStream;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Lexer;
+use Stempler\Lexer\StringStream;
+use Stempler\Lexer\Token;
 
 class RawTest extends BaseTestCase
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Parser\Syntax;
+namespace Stempler\Parser\Syntax;
 
-use Spiral\Stempler\Lexer\Token;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Parser;
-use Spiral\Stempler\Parser\Assembler;
-use Spiral\Stempler\Parser\SyntaxInterface;
+use Stempler\Lexer\Token;
+use Stempler\Node\Raw;
+use Stempler\Parser;
+use Stempler\Parser\Assembler;
+use Stempler\Parser\SyntaxInterface;
 
 /**
  * Register simple text inclusions.

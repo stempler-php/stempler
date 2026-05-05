@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Exception\Traits;
+namespace Stempler\Exception\Traits;
 
-use Spiral\Stempler\Parser\Context;
+use Stempler\Parser\Context;
 
 /**
  * To be used on Exceptions.

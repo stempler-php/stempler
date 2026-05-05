@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Compiler;
+namespace Stempler\Tests\Compiler;
 
 use PHPUnit\Framework\TestCase;
-use Spiral\Stempler\Compiler;
-use Spiral\Stempler\Lexer\StringStream;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Parser;
+use Stempler\Compiler;
+use Stempler\Lexer\StringStream;
+use Stempler\Node\Template;
+use Stempler\Parser;
 
 abstract class BaseTestCase extends TestCase
 {

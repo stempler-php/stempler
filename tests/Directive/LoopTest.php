@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Directive;
+namespace Stempler\Tests\Directive;
 
-use Spiral\Stempler\Directive\LoopDirective;
+use Stempler\Directive\LoopDirective;
 
 class LoopTest extends BaseTestCase
 {

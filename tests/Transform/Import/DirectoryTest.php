@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform\Import;
+namespace Stempler\Tests\Transform\Import;
 
 use Mockery as m;
 use PHPUnit\Framework\Attributes\DataProvider;
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\Source;
-use Spiral\Stempler\Transform\Import\Directory;
-use Spiral\Tests\Stempler\Transform\BaseTestCase;
+use Stempler\Builder;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\Source;
+use Stempler\Transform\Import\Directory;
+use Stempler\Tests\Transform\BaseTestCase;
 
 final class DirectoryTest extends BaseTestCase
 {

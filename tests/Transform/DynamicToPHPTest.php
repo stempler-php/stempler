@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
 use PHPUnit\Framework\Attributes\DataProvider;
-use Spiral\Stempler\Directive\LoopDirective;
-use Spiral\Stempler\Node\PHP;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Transform\Finalizer\DynamicToPHP;
+use Stempler\Directive\LoopDirective;
+use Stempler\Node\PHP;
+use Stempler\Node\Raw;
+use Stempler\Transform\Finalizer\DynamicToPHP;
 
 class DynamicToPHPTest extends BaseTestCase
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Grammar;
+namespace Stempler\Tests\Grammar;
 
-use Spiral\Stempler\Lexer\Grammar\Dynamic\DeclareGrammar;
-use Spiral\Stempler\Lexer\Grammar\DynamicGrammar;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Grammar\Dynamic\DeclareGrammar;
+use Stempler\Lexer\Grammar\DynamicGrammar;
+use Stempler\Lexer\Token;
 
 class DynamicTest extends BaseTestCase
 {

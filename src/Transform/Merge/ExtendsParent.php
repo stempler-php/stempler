@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Merge;
+namespace Stempler\Transform\Merge;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Exception\ExtendsException;
-use Spiral\Stempler\Exception\SyntaxException;
-use Spiral\Stempler\Node\AttributedInterface;
-use Spiral\Stempler\Node\Block;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\HTML\Verbatim;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Transform\Merger;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Builder;
+use Stempler\Exception\ExtendsException;
+use Stempler\Exception\SyntaxException;
+use Stempler\Node\AttributedInterface;
+use Stempler\Node\Block;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\HTML\Verbatim;
+use Stempler\Node\Template;
+use Stempler\Transform\Merger;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Extends parent template using blocks defined withing template scope (same level

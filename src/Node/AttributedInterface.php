@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node;
+namespace Stempler\Node;
 
 interface AttributedInterface
 {

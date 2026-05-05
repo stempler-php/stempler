@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Merge\Inject;
+namespace Stempler\Transform\Merge\Inject;
 
 /**
  * PHPMixin provides the ability to safely inject nodes into PHP source code using given macro function.

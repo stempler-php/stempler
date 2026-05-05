@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Compiler;
+namespace Stempler\Compiler;
 
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\Source;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\Source;
 
 /**
  * Stores and resolves offsets and line numbers between templates.

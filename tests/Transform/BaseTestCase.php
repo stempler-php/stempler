@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
 use PHPUnit\Framework\TestCase;
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Compiler\Renderer\CoreRenderer;
-use Spiral\Stempler\Compiler\Renderer\DynamicRenderer;
-use Spiral\Stempler\Compiler\Renderer\HTMLRenderer;
-use Spiral\Stempler\Compiler\Renderer\PHPRenderer;
-use Spiral\Stempler\Directive\DirectiveGroup;
-use Spiral\Stempler\Lexer\Grammar\DynamicGrammar;
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Lexer\Grammar\InlineGrammar;
-use Spiral\Stempler\Lexer\Grammar\PHPGrammar;
-use Spiral\Stempler\Loader\DirectoryLoader;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\StringLoader;
-use Spiral\Stempler\Parser\Syntax\DynamicSyntax;
-use Spiral\Stempler\Parser\Syntax\HTMLSyntax;
-use Spiral\Stempler\Parser\Syntax\InlineSyntax;
-use Spiral\Stempler\Parser\Syntax\PHPSyntax;
+use Stempler\Builder;
+use Stempler\Compiler\Renderer\CoreRenderer;
+use Stempler\Compiler\Renderer\DynamicRenderer;
+use Stempler\Compiler\Renderer\HTMLRenderer;
+use Stempler\Compiler\Renderer\PHPRenderer;
+use Stempler\Directive\DirectiveGroup;
+use Stempler\Lexer\Grammar\DynamicGrammar;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Lexer\Grammar\InlineGrammar;
+use Stempler\Lexer\Grammar\PHPGrammar;
+use Stempler\Loader\DirectoryLoader;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\StringLoader;
+use Stempler\Parser\Syntax\DynamicSyntax;
+use Stempler\Parser\Syntax\HTMLSyntax;
+use Stempler\Parser\Syntax\InlineSyntax;
+use Stempler\Parser\Syntax\PHPSyntax;
 
 abstract class BaseTestCase extends TestCase
 {

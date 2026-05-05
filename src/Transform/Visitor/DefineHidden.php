@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Visitor;
+namespace Stempler\Transform\Visitor;
 
-use Spiral\Stempler\Node\Hidden;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\Hidden;
+use Stempler\Node\HTML\Tag;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 final class DefineHidden implements VisitorInterface
 {

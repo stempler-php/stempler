@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Directive;
+namespace Stempler\Tests\Directive;
 
-use Spiral\Stempler\Directive\DirectiveGroup;
-use Spiral\Stempler\Directive\LoopDirective;
-use Spiral\Stempler\Lexer\Grammar\DynamicGrammar;
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Lexer\StringStream;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Parser;
-use Spiral\Stempler\Parser\Syntax\HTMLSyntax;
+use Stempler\Directive\DirectiveGroup;
+use Stempler\Directive\LoopDirective;
+use Stempler\Lexer\Grammar\DynamicGrammar;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Lexer\StringStream;
+use Stempler\Node\Template;
+use Stempler\Parser;
+use Stempler\Parser\Syntax\HTMLSyntax;
 
 class OnlyKnownTest extends BaseTestCase
 {

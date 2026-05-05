@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Parser;
+namespace Stempler\Parser;
 
-use Spiral\Stempler\Exception\SyntaxException;
-use Spiral\Stempler\Lexer\Token;
-use Spiral\Stempler\Parser;
+use Stempler\Exception\SyntaxException;
+use Stempler\Lexer\Token;
+use Stempler\Parser;
 
 interface SyntaxInterface
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Context;
+namespace Stempler\Transform\Context;
 
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Node\AttributedInterface;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\VisitorContext;
+use Stempler\Node\Aggregate;
+use Stempler\Node\AttributedInterface;
+use Stempler\Node\HTML\Tag;
+use Stempler\VisitorContext;
 
 final class StackContext
 {

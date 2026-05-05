@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Import;
+namespace Stempler\Transform\Import;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Builder;
+use Stempler\Node\Template;
+use Stempler\Parser\Context;
 
 interface ImportInterface
 {

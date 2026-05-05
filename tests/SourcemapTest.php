@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler;
+namespace Stempler\Tests;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Directive\LoopDirective;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Tests\Stempler\Transform\BaseTestCase;
-use Spiral\Stempler\Transform\Finalizer\DynamicToPHP;
-use Spiral\Stempler\Transform\Merge\ExtendsParent;
-use Spiral\Stempler\Transform\Merge\ResolveImports;
-use Spiral\Stempler\Transform\Visitor\DefineAttributes;
-use Spiral\Stempler\Transform\Visitor\DefineBlocks;
+use Stempler\Builder;
+use Stempler\Directive\LoopDirective;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Tests\Transform\BaseTestCase;
+use Stempler\Transform\Finalizer\DynamicToPHP;
+use Stempler\Transform\Merge\ExtendsParent;
+use Stempler\Transform\Merge\ResolveImports;
+use Stempler\Transform\Visitor\DefineAttributes;
+use Stempler\Transform\Visitor\DefineBlocks;
 
 class SourcemapTest extends BaseTestCase
 {

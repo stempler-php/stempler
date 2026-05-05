@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Compiler;
+namespace Stempler\Compiler;
 
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Parser\Context;
 
 /**
  * Result contains generated template content and line numbers associated with root template and

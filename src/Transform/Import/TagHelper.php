@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Import;
+namespace Stempler\Transform\Import;
 
 final class TagHelper
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Exception;
+namespace Stempler\Exception;
 
-use Spiral\Stempler\Parser\Context;
+use Stempler\Parser\Context;
 
 /**
  * Exception is able to carry template specific location.

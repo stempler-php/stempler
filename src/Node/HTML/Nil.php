@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node\HTML;
+namespace Stempler\Node\HTML;
 
-use Spiral\Stempler\Node\NodeInterface;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Node\NodeInterface;
+use Stempler\Parser\Context;
 
 /**
  * Attribute without any value.

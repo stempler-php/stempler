@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Visitor;
+namespace Stempler\Transform\Visitor;
 
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Transform\Context\StackContext;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\Aggregate;
+use Stempler\Node\HTML\Tag;
+use Stempler\Transform\Context\StackContext;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Declares stack aggregate placeholders.

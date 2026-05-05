@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Grammar;
+namespace Stempler\Tests\Grammar;
 
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Lexer\Token;
 
 class HTMLTest extends BaseTestCase
 {

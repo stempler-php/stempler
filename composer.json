@@ -1,5 +1,5 @@
 {
-    "name": "spiral/stempler",
+    "name": "stempler/stempler",
     "type": "library",
     "description": "Stempler, HTML markup processor and template engine framework",
     "license": "MIT",
@@ -9,10 +9,10 @@
             "url": "https://github.com/sponsors/spiral"
         }
     ],
-    "homepage": "https://spiral.dev",
+    "homepage": "https://github.com/stempler-php/stempler/",
     "support": {
-        "issues": "https://github.com/spiral/framework/issues",
-        "source": "https://github.com/spiral/stempler"
+        "issues": "https://github.com/stempler-php/stempler/issues",
+        "source": "https://github.com/stempler-php/stempler/"
     },
     "authors": [
         {
@@ -47,12 +47,12 @@
             "src/helpers.php"
         ],
         "psr-4": {
-            "Spiral\\Stempler\\": "src"
+            "Stempler\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spiral\\Tests\\Stempler\\": "tests"
+            "Stempler\\Tests\\": "tests"
         }
     },
     "extra": {

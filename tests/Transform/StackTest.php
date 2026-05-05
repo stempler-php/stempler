@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Transform\Finalizer\StackCollector;
-use Spiral\Stempler\Transform\Finalizer\TrimRaw;
-use Spiral\Stempler\Transform\Visitor\DefineStacks;
+use Stempler\Builder;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Node\Aggregate;
+use Stempler\Node\Raw;
+use Stempler\Transform\Finalizer\StackCollector;
+use Stempler\Transform\Finalizer\TrimRaw;
+use Stempler\Transform\Visitor\DefineStacks;
 
 class StackTest extends BaseTestCase
 {

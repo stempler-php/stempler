@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\StringLoader;
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Transform\Merge\ResolveImports;
-use Spiral\Stempler\Transform\Visitor\DefineAttributes;
-use Spiral\Stempler\Transform\Visitor\DefineBlocks;
+use Stempler\Builder;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\StringLoader;
+use Stempler\Node\Aggregate;
+use Stempler\Transform\Merge\ResolveImports;
+use Stempler\Transform\Visitor\DefineAttributes;
+use Stempler\Transform\Visitor\DefineBlocks;
 
 class AttributesTest extends BaseTestCase
 {

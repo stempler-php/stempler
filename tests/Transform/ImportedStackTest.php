@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Directive\LoopDirective;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\StringLoader;
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Transform\Finalizer\DynamicToPHP;
-use Spiral\Stempler\Transform\Finalizer\StackCollector;
-use Spiral\Stempler\Transform\Finalizer\TrimRaw;
-use Spiral\Stempler\Transform\Merge\ExtendsParent;
-use Spiral\Stempler\Transform\Merge\ResolveImports;
-use Spiral\Stempler\Transform\Visitor\DefineAttributes;
-use Spiral\Stempler\Transform\Visitor\DefineBlocks;
-use Spiral\Stempler\Transform\Visitor\DefineHidden;
-use Spiral\Stempler\Transform\Visitor\DefineStacks;
+use Stempler\Builder;
+use Stempler\Directive\LoopDirective;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\StringLoader;
+use Stempler\Node\Aggregate;
+use Stempler\Transform\Finalizer\DynamicToPHP;
+use Stempler\Transform\Finalizer\StackCollector;
+use Stempler\Transform\Finalizer\TrimRaw;
+use Stempler\Transform\Merge\ExtendsParent;
+use Stempler\Transform\Merge\ResolveImports;
+use Stempler\Transform\Visitor\DefineAttributes;
+use Stempler\Transform\Visitor\DefineBlocks;
+use Stempler\Transform\Visitor\DefineHidden;
+use Stempler\Transform\Visitor\DefineStacks;
 
 class ImportedStackTest extends BaseTestCase
 {

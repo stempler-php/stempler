@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Lexer;
+namespace Stempler\Lexer;
 
-use Spiral\Stempler\Exception\ScannerException;
+use Stempler\Exception\ScannerException;
 
 final class StringStream implements StreamInterface
 {

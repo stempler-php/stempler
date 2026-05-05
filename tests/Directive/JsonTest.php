@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Directive;
+namespace Stempler\Tests\Directive;
 
-use Spiral\Stempler\Directive\JsonDirective;
+use Stempler\Directive\JsonDirective;
 
 class JsonTest extends BaseTestCase
 {

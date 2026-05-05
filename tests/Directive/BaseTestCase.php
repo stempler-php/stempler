@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Directive;
+namespace Stempler\Tests\Directive;
 
-use Spiral\Stempler\Compiler;
-use Spiral\Stempler\Compiler\Renderer\CoreRenderer;
-use Spiral\Stempler\Compiler\Renderer\HTMLRenderer;
-use Spiral\Stempler\Directive\DirectiveGroup;
-use Spiral\Stempler\Lexer\Grammar\DynamicGrammar;
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Parser\Syntax\DynamicSyntax;
-use Spiral\Stempler\Parser\Syntax\HTMLSyntax;
+use Stempler\Compiler;
+use Stempler\Compiler\Renderer\CoreRenderer;
+use Stempler\Compiler\Renderer\HTMLRenderer;
+use Stempler\Directive\DirectiveGroup;
+use Stempler\Lexer\Grammar\DynamicGrammar;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Node\Template;
+use Stempler\Parser\Syntax\DynamicSyntax;
+use Stempler\Parser\Syntax\HTMLSyntax;
 
-abstract class BaseTestCase extends \Spiral\Tests\Stempler\Compiler\BaseTestCase
+abstract class BaseTestCase extends \Stempler\Tests\Compiler\BaseTestCase
 {
     protected const RENDERS = [
         CoreRenderer::class,

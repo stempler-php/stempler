@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform;
+namespace Stempler\Transform;
 
-use Spiral\Stempler\Node\Block;
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\NodeInterface;
+use Stempler\Node\Block;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\NodeInterface;
 
 /**
  * Fetches block definitions from Tag blocks and their children.

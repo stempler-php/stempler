@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Transform;
+namespace Stempler\Tests\Transform;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Directive\LoopDirective;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\StringLoader;
-use Spiral\Stempler\Transform\Finalizer\DynamicToPHP;
-use Spiral\Stempler\Transform\Finalizer\TrimRaw;
-use Spiral\Stempler\Transform\Merge\ResolveImports;
-use Spiral\Stempler\Transform\Visitor\DefineAttributes;
-use Spiral\Stempler\Transform\Visitor\DefineBlocks;
+use Stempler\Builder;
+use Stempler\Directive\LoopDirective;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\StringLoader;
+use Stempler\Transform\Finalizer\DynamicToPHP;
+use Stempler\Transform\Finalizer\TrimRaw;
+use Stempler\Transform\Merge\ResolveImports;
+use Stempler\Transform\Visitor\DefineAttributes;
+use Stempler\Transform\Visitor\DefineBlocks;
 
 class ImportInlineTest extends BaseTestCase
 {

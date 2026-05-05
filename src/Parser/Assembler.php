@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Parser;
+namespace Stempler\Parser;
 
-use Spiral\Stempler\Node\NodeInterface;
+use Stempler\Node\NodeInterface;
 
 /**
  * Assembles node tree by keeping current node context.

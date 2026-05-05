@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node\Dynamic;
+namespace Stempler\Node\Dynamic;
 
-use Spiral\Stempler\Node\NodeInterface;
-use Spiral\Stempler\Node\Traits\ContextTrait;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Node\NodeInterface;
+use Stempler\Node\Traits\ContextTrait;
+use Stempler\Parser\Context;
 
 /**
  * @implements NodeInterface<Output>

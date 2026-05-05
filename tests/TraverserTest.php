@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler;
+namespace Stempler\Tests;
 
-use Spiral\Stempler\Compiler\Renderer\CoreRenderer;
-use Spiral\Stempler\Compiler\Renderer\HTMLRenderer;
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Parser\Syntax\HTMLSyntax;
-use Spiral\Tests\Stempler\Compiler\BaseTestCase;
-use Spiral\Stempler\Traverser;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Compiler\Renderer\CoreRenderer;
+use Stempler\Compiler\Renderer\HTMLRenderer;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\Raw;
+use Stempler\Parser\Syntax\HTMLSyntax;
+use Stempler\Tests\Compiler\BaseTestCase;
+use Stempler\Traverser;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 class TraverserTest extends BaseTestCase implements VisitorInterface
 {

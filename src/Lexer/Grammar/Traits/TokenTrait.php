@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Lexer\Grammar\Traits;
+namespace Stempler\Lexer\Grammar\Traits;
 
-use Spiral\Stempler\Lexer\Byte;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Byte;
+use Stempler\Lexer\Token;
 
 trait TokenTrait
 {

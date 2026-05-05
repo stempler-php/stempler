@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node\Traits;
+namespace Stempler\Node\Traits;
 
-use Spiral\Stempler\Parser\Context;
+use Stempler\Parser\Context;
 
 trait ContextTrait
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Syntax;
+namespace Stempler\Tests\Syntax;
 
-use Spiral\Stempler\Lexer\Grammar\DynamicGrammar;
-use Spiral\Stempler\Node\Dynamic\Directive;
-use Spiral\Stempler\Node\Dynamic\Output;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Parser\Syntax\DynamicSyntax;
+use Stempler\Lexer\Grammar\DynamicGrammar;
+use Stempler\Node\Dynamic\Directive;
+use Stempler\Node\Dynamic\Output;
+use Stempler\Node\Raw;
+use Stempler\Parser\Syntax\DynamicSyntax;
 
 class DynamicTest extends BaseTestCase
 {

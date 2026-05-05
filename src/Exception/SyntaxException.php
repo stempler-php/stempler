@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Exception;
+namespace Stempler\Exception;
 
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Token;
 
 /**
  * Syntax exceptions can be intercepted at Builder level to properly associate

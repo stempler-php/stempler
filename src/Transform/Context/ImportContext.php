@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Context;
+namespace Stempler\Transform\Context;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Node\AttributedInterface;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Transform\Import\ImportInterface;
-use Spiral\Stempler\VisitorContext;
+use Stempler\Builder;
+use Stempler\Node\AttributedInterface;
+use Stempler\Node\Template;
+use Stempler\Transform\Import\ImportInterface;
+use Stempler\VisitorContext;
 
 /**
  * Manages currently open scope of imports (via nested tags).

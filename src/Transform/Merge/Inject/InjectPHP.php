@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Merge\Inject;
+namespace Stempler\Transform\Merge\Inject;
 
-use Spiral\Stempler\Node\Block;
-use Spiral\Stempler\Node\Dynamic\Output;
-use Spiral\Stempler\Node\Mixin;
-use Spiral\Stempler\Node\PHP;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Transform\BlockClaims;
-use Spiral\Stempler\Transform\QuotedValue;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\Block;
+use Stempler\Node\Dynamic\Output;
+use Stempler\Node\Mixin;
+use Stempler\Node\PHP;
+use Stempler\Node\Raw;
+use Stempler\Transform\BlockClaims;
+use Stempler\Transform\QuotedValue;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Injects block values into PHP source code using marco function.

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Visitor;
+namespace Stempler\Transform\Visitor;
 
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Node\Block;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\Aggregate;
+use Stempler\Node\Block;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\Raw;
+use Stempler\Node\Template;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Flatten all block, template and aggregate blocks from the template and inject their content to the parent template.

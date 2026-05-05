@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Visitor;
+namespace Stempler\Transform\Visitor;
 
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\HTML\Nil;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\Aggregate;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\HTML\Nil;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Creates node placeholder to aggregate user specific attributes into

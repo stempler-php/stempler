@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler;
+namespace Stempler;
 
-use Spiral\Stempler\Node\NodeInterface;
+use Stempler\Node\NodeInterface;
 
 /**
  * Inspired by php-parser.

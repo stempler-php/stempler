@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler;
+namespace Stempler;
 
-use Spiral\Stempler\Compiler\RendererInterface;
-use Spiral\Stempler\Compiler\Result;
-use Spiral\Stempler\Exception\CompilerException;
-use Spiral\Stempler\Node\NodeInterface;
+use Stempler\Compiler\RendererInterface;
+use Stempler\Compiler\Result;
+use Stempler\Exception\CompilerException;
+use Stempler\Node\NodeInterface;
 
 /**
  * Recursively compile node tree using set of handlers.

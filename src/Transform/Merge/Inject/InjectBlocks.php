@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Merge\Inject;
+namespace Stempler\Transform\Merge\Inject;
 
-use Spiral\Stempler\Node\Block;
-use Spiral\Stempler\Transform\BlockClaims;
-use Spiral\Stempler\Transform\QuotedValue;
-use Spiral\Stempler\Traverser;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\Block;
+use Stempler\Transform\BlockClaims;
+use Stempler\Transform\QuotedValue;
+use Stempler\Traverser;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Replaces blocks by name.

@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler;
+namespace Stempler\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Compiler\SourceMap;
-use Spiral\Stempler\Loader\DirectoryLoader;
-use Spiral\Stempler\Loader\LoaderInterface;
-use Spiral\Stempler\Loader\StringLoader;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Stempler;
-use Spiral\Stempler\StemplerCache;
-use Spiral\Stempler\Transform\Visitor\FlattenNodes;
-use Spiral\Stempler\Transform\Visitor\FormatHTML;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
-use Spiral\Tests\Stempler\fixtures\ImageDirective;
+use Stempler\Builder;
+use Stempler\Compiler\SourceMap;
+use Stempler\Loader\DirectoryLoader;
+use Stempler\Loader\LoaderInterface;
+use Stempler\Loader\StringLoader;
+use Stempler\Node\Raw;
+use Stempler\Stempler;
+use Stempler\StemplerCache;
+use Stempler\Transform\Visitor\FlattenNodes;
+use Stempler\Transform\Visitor\FormatHTML;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
+use Stempler\Tests\fixtures\ImageDirective;
 
 final class StemplerTest extends TestCase
 {
@@ -183,7 +183,7 @@ final class StemplerTest extends TestCase
 
             public function leaveNode(mixed $node, VisitorContext $ctx): mixed
             {
-                if ($node instanceof \Spiral\Stempler\Node\Template) {
+                if ($node instanceof \Stempler\Node\Template) {
                     $this->count++;
                 }
 
@@ -225,7 +225,7 @@ final class StemplerTest extends TestCase
 
             public function leaveNode(mixed $node, VisitorContext $ctx): mixed
             {
-                if ($node instanceof \Spiral\Stempler\Node\Template) {
+                if ($node instanceof \Stempler\Node\Template) {
                     $this->count++;
                 }
 

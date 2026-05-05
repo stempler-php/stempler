@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Grammar;
+namespace Stempler\Tests\Grammar;
 
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Lexer\Grammar\InlineGrammar;
-use Spiral\Stempler\Lexer\Grammar\PHPGrammar;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Lexer\Grammar\InlineGrammar;
+use Stempler\Lexer\Grammar\PHPGrammar;
+use Stempler\Lexer\Token;
 
 class MixedTest extends BaseTestCase
 {

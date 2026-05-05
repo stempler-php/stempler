@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Directive;
+namespace Stempler\Tests\Directive;
 
-use Spiral\Tests\Stempler\fixtures\ImageDirective;
+use Stempler\Tests\fixtures\ImageDirective;
 
 final class DirectiveTest extends BaseTestCase
 {

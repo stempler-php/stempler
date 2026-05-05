@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Lexer;
+namespace Stempler\Lexer;
 
 /**
  * Creates local buffers over byte/token stream. Able to replay some tokens.

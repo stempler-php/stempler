@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Compiler;
+namespace Stempler\Tests\Compiler;
 
-use Spiral\Stempler\Compiler\Renderer\CoreRenderer;
+use Stempler\Compiler\Renderer\CoreRenderer;
 
 class RawTest extends BaseTestCase
 {

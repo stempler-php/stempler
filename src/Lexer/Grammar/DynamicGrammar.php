@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Lexer\Grammar;
+namespace Stempler\Lexer\Grammar;
 
-use Spiral\Stempler\Directive\DirectiveRendererInterface;
-use Spiral\Stempler\Lexer\Buffer;
-use Spiral\Stempler\Lexer\Byte;
-use Spiral\Stempler\Lexer\Grammar\Dynamic\BracesGrammar;
-use Spiral\Stempler\Lexer\Grammar\Dynamic\DeclareGrammar;
-use Spiral\Stempler\Lexer\Grammar\Dynamic\DirectiveGrammar;
-use Spiral\Stempler\Lexer\Grammar\Traits\TokenTrait;
-use Spiral\Stempler\Lexer\GrammarInterface;
-use Spiral\Stempler\Lexer\Lexer;
-use Spiral\Stempler\Lexer\StringStream;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Directive\DirectiveRendererInterface;
+use Stempler\Lexer\Buffer;
+use Stempler\Lexer\Byte;
+use Stempler\Lexer\Grammar\Dynamic\BracesGrammar;
+use Stempler\Lexer\Grammar\Dynamic\DeclareGrammar;
+use Stempler\Lexer\Grammar\Dynamic\DirectiveGrammar;
+use Stempler\Lexer\Grammar\Traits\TokenTrait;
+use Stempler\Lexer\GrammarInterface;
+use Stempler\Lexer\Lexer;
+use Stempler\Lexer\StringStream;
+use Stempler\Lexer\Token;
 
 /**
  * Similar to Laravel blade, this grammar defines the ability to echo PHP variables using {{ $var }} statements

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\fixtures;
+namespace Stempler\Tests\fixtures;
 
-use Spiral\Stempler\Directive\AbstractDirective;
-use Spiral\Stempler\Node\Dynamic\Directive;
+use Stempler\Directive\AbstractDirective;
+use Stempler\Node\Dynamic\Directive;
 
 final class ImageDirective extends AbstractDirective
 {

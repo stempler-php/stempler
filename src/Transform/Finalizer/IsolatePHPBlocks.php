@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Finalizer;
+namespace Stempler\Transform\Finalizer;
 
-use Spiral\Stempler\Node\PHP;
-use Spiral\Stempler\Transform\Merge\Inject\PHPMixin;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\PHP;
+use Stempler\Transform\Merge\Inject\PHPMixin;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Isolates PHP block definitions inside the origin template.

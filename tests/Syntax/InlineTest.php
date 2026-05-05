@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Tests\Stempler\Syntax;
+namespace Stempler\Tests\Syntax;
 
-use Spiral\Stempler\Lexer\Grammar\InlineGrammar;
-use Spiral\Stempler\Node\Inline;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Parser\Syntax\InlineSyntax;
+use Stempler\Lexer\Grammar\InlineGrammar;
+use Stempler\Node\Inline;
+use Stempler\Node\Raw;
+use Stempler\Parser\Syntax\InlineSyntax;
 
 class InlineTest extends BaseTestCase
 {

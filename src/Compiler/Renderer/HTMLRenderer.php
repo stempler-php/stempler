@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Compiler\Renderer;
+namespace Stempler\Compiler\Renderer;
 
-use Spiral\Stempler\Compiler;
-use Spiral\Stempler\Compiler\RendererInterface;
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\HTML\Nil;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\HTML\Verbatim;
-use Spiral\Stempler\Node\NodeInterface;
+use Stempler\Compiler;
+use Stempler\Compiler\RendererInterface;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\HTML\Nil;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\HTML\Verbatim;
+use Stempler\Node\NodeInterface;
 
 final class HTMLRenderer implements RendererInterface
 {

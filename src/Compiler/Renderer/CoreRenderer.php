@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Compiler\Renderer;
+namespace Stempler\Compiler\Renderer;
 
-use Spiral\Stempler\Compiler;
-use Spiral\Stempler\Compiler\RendererInterface;
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Node\Block;
-use Spiral\Stempler\Node\Hidden;
-use Spiral\Stempler\Node\Mixin;
-use Spiral\Stempler\Node\NodeInterface;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Node\Template;
+use Stempler\Compiler;
+use Stempler\Compiler\RendererInterface;
+use Stempler\Node\Aggregate;
+use Stempler\Node\Block;
+use Stempler\Node\Hidden;
+use Stempler\Node\Mixin;
+use Stempler\Node\NodeInterface;
+use Stempler\Node\Raw;
+use Stempler\Node\Template;
 
 final class CoreRenderer implements RendererInterface
 {

@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Parser\Syntax;
+namespace Stempler\Parser\Syntax;
 
-use Spiral\Stempler\Exception\SyntaxException;
-use Spiral\Stempler\Lexer\Grammar\HTMLGrammar;
-use Spiral\Stempler\Lexer\Token;
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\HTML\Nil;
-use Spiral\Stempler\Node\HTML\Tag;
-use Spiral\Stempler\Node\HTML\Verbatim;
-use Spiral\Stempler\Node\Mixin;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Parser;
-use Spiral\Stempler\Parser\Assembler;
-use Spiral\Stempler\Parser\SyntaxInterface;
+use Stempler\Exception\SyntaxException;
+use Stempler\Lexer\Grammar\HTMLGrammar;
+use Stempler\Lexer\Token;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\HTML\Nil;
+use Stempler\Node\HTML\Tag;
+use Stempler\Node\HTML\Verbatim;
+use Stempler\Node\Mixin;
+use Stempler\Node\Raw;
+use Stempler\Parser;
+use Stempler\Parser\Assembler;
+use Stempler\Parser\SyntaxInterface;
 
 /**
  * HTML tags and attributes.

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Node;
+namespace Stempler\Node;
 
-use Spiral\Stempler\Parser\Context;
+use Stempler\Parser\Context;
 
 /**
  * Allow traversing but do not render.

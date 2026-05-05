@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Import;
+namespace Stempler\Transform\Import;
 
-use Spiral\Stempler\Builder;
-use Spiral\Stempler\Node\Template;
-use Spiral\Stempler\Node\Traits\ContextTrait;
-use Spiral\Stempler\Parser\Context;
+use Stempler\Builder;
+use Stempler\Node\Template;
+use Stempler\Node\Traits\ContextTrait;
+use Stempler\Parser\Context;
 
 /**
  * Load directory, supports . as directory separator.

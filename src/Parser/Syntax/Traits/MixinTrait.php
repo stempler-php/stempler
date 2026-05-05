@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Parser\Syntax\Traits;
+namespace Stempler\Parser\Syntax\Traits;
 
-use Spiral\Stempler\Lexer\Token;
-use Spiral\Stempler\Node\Mixin;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Parser;
-use Spiral\Stempler\Parser\Assembler;
+use Stempler\Lexer\Token;
+use Stempler\Node\Mixin;
+use Stempler\Node\Raw;
+use Stempler\Parser;
+use Stempler\Parser\Assembler;
 
 trait MixinTrait
 {

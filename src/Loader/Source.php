@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Loader;
+namespace Stempler\Loader;
 
 /**
  * Carries information about template content and physical location.

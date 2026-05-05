@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Transform\Merge\Inject;
+namespace Stempler\Transform\Merge\Inject;
 
-use Spiral\Stempler\Node\Aggregate;
-use Spiral\Stempler\Node\HTML\Attr;
-use Spiral\Stempler\Node\HTML\Nil;
-use Spiral\Stempler\Node\HTML\Verbatim;
-use Spiral\Stempler\Node\Mixin;
-use Spiral\Stempler\Node\Raw;
-use Spiral\Stempler\Transform\BlockClaims;
-use Spiral\Stempler\Transform\QuotedValue;
-use Spiral\Stempler\VisitorContext;
-use Spiral\Stempler\VisitorInterface;
+use Stempler\Node\Aggregate;
+use Stempler\Node\HTML\Attr;
+use Stempler\Node\HTML\Nil;
+use Stempler\Node\HTML\Verbatim;
+use Stempler\Node\Mixin;
+use Stempler\Node\Raw;
+use Stempler\Transform\BlockClaims;
+use Stempler\Transform\QuotedValue;
+use Stempler\VisitorContext;
+use Stempler\VisitorInterface;
 
 /**
  * Creates attribute values based on un-claimed import blocks via `attr:aggregate` attribute.

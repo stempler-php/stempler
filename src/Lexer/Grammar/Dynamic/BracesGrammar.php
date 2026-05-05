@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Spiral\Stempler\Lexer\Grammar\Dynamic;
+namespace Stempler\Lexer\Grammar\Dynamic;
 
-use Spiral\Stempler\Lexer\Buffer;
-use Spiral\Stempler\Lexer\Byte;
-use Spiral\Stempler\Lexer\Grammar\DynamicGrammar;
-use Spiral\Stempler\Lexer\Grammar\Traits\TokenTrait;
-use Spiral\Stempler\Lexer\Token;
+use Stempler\Lexer\Buffer;
+use Stempler\Lexer\Byte;
+use Stempler\Lexer\Grammar\DynamicGrammar;
+use Stempler\Lexer\Grammar\Traits\TokenTrait;
+use Stempler\Lexer\Token;
 
 /**
  * Control open and close brace grammar.
